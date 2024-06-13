@@ -16,7 +16,7 @@
         }
 
         img {
-            width: 50%;
+            width: 30%;
             border-radius: 10px;
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         }
@@ -38,11 +38,23 @@
 
 <body>
     <h1>Uh oh stinky</h1>
-    <img src="stinky.jpg" alt="stinky">
+    <img id="stinkyImg" src="stinky.jpg" alt="stinky">
     <div>
         <iframe width="110" height="200" src="https://www.myinstants.com/instant/uh-oh-stinky-45945/embed/"
             frameborder="0" scrolling="no"></iframe>
-        <button onclick="alert('ky xc got 1 leg')">tell me a story</button>
+        <button id="fleeingButton" onclick="alert('ur mom gay')">tell me a story</button>
+        <script>
+            const button = document.getElementById('fleeingButton');
+            button.addEventListener('mouseover', function(event) {
+                const buttonRect = button.getBoundingClientRect();
+                const newX = Math.random() * (window.innerWidth - buttonRect.width);
+                const newY = Math.random() * (window.innerHeight - buttonRect.height);
+                button.style.position = 'absolute';
+                button.style.transition = 'left 0.5s ease, top 0.5s ease';
+                button.style.left = `${newX}px`;
+                button.style.top = `${newY}px`;
+            });
+        </script>
     </div>
 </body>
 
