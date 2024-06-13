@@ -44,8 +44,13 @@
             frameborder="0" scrolling="no"></iframe>
         <button id="fleeingButton" onclick="alert('ur mom gay')">tell me a story</button>
         <script>
+            setInterval(function () {
+                const img = document.getElementById('stinkyImg');
+                img.style.transition = 'transform 0.5s';
+                img.style.transform = img.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
+            }, 5000);
             const button = document.getElementById('fleeingButton');
-            button.addEventListener('mouseover', function(event) {
+            button.addEventListener('mouseover', function (event) {
                 const buttonRect = button.getBoundingClientRect();
                 const newX = Math.random() * (window.innerWidth - buttonRect.width);
                 const newY = Math.random() * (window.innerHeight - buttonRect.height);
